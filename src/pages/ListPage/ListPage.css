@@ -1,0 +1,6 @@
+@import url(../../components/constants.css);
+
+.listPage {
+    height: 100vh;
+    background-color: var(--dark);
+}

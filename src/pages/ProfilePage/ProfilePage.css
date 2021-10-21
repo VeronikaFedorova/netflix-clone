@@ -1,0 +1,60 @@
+@import url("../../components/constants.css");
+
+.profilePage {
+    height: 100vh;
+    color: var(--light);
+}
+
+.profilePage__body {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 8%;
+    max-width: 800px;
+}
+
+.profilePage__body > h1 {
+    font-size: 60px;
+    font-weight: 400;
+    border-bottom: 1px solid var(--dark);
+    margin-bottom: 20px;
+}
+
+.profilePage__info {
+    display: flex;
+
+}
+
+.profilePage__info > img {
+    height: 100px;
+}
+
+.profilePage__details {
+    color: var(--red);
+    margin-left: 25px;
+    flex: 1;
+}
+
+.profilePage__details > h2 {
+    background-color: var(--grey);
+    padding: 15px;
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.profilePage__button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 5%;
+    width: 100%;
+    color: var(--white);
+    background-color: var(--red);
+    border: none;
+}
+
+.profilePage__button:hover {
+    background-color: var(--black);
+    color: var(--red);
+}

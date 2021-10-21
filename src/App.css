@@ -1,0 +1,5 @@
+@import url("./components/constants.css");
+
+.app {
+  background-color: var(--dark);
+}
