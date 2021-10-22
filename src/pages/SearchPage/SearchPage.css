@@ -1,0 +1,42 @@
+@import url("../../components/constants.css");
+
+.searchPage {
+  height: 100vh;
+  background-color: var(--dark);
+}
+
+.search__input {
+  margin-left: 30%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 30px;
+  width: 35%;
+  border-radius: 3%;
+  color: var(--light);
+}
+
+.search__input::placeholder {
+  color: var(--light);
+}
+
+.search__posters {
+  background-color: var(--dark);
+  padding-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto, 1vw);
+  grid-gap: 15px;
+}
+
+.search__poster {
+  cursor: pointer;
+  max-height: 250px;
+  object-fit: contain;
+  margin-right: 10px;
+  width: 100%;
+  transition: transform 450ms;
+}
+
+.search__poster:hover {
+  transform: scale(1.2);
+}

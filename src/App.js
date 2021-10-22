@@ -10,6 +10,8 @@ import Loginpage from "./pages/Loginpage/Loginpage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import FriendsPage from "./pages/FriendsPage/FriendsPage";
 import ListPage from "./pages/ListPage/ListPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import MoviePage from "./pages/MoviePage/MoviePage";
 
 function App() {
   const user = useSelector(selectUser);
@@ -41,6 +43,9 @@ function App() {
             <Route exact path="/">
               <Homepage />
             </Route>
+            <Route path="/search">
+              <SearchPage />
+            </Route>
             <Route path="/profile">
               <ProfilePage />
             </Route>
@@ -49,6 +54,9 @@ function App() {
             </Route>
             <Route path="/friends">
               <FriendsPage />
+            </Route>
+            <Route path="/movie">
+              <MoviePage />
             </Route>
           </Switch>
         )}

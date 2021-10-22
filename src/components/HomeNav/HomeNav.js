@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./HomeNav.css";
 
-const HomeNav = () => {
+const HomeNav = ({updateData}) => {
   const [show, handleShow] = useState(false);
   const history = useHistory();
+
 
   const transitionNavbar = () => {
     if (window.scrollY > 100) {
@@ -28,9 +29,13 @@ const HomeNav = () => {
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt="logo"
         />
-
-        <input type="text" placeholder="Search..." className="search__input" />
-
+        <ul>
+          <li>
+            <i
+              onClick={() => history.push("/search")} 
+              className="fas fa-search"></i>
+          </li>
+        </ul>
         <img
           onClick={() => history.push("/profile")}
           className="nav__avatar"

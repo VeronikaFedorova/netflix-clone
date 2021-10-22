@@ -7,6 +7,8 @@ import Row from "../../components/Row/Row";
 import requests from "../../config/requests/requests";
 
 const Homepage = () => {
+
+
   return (
     <div className="homePage">
       <HomeNav />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Row.css";
 import axios from "../../config/axios/axios";
 
-const Row = ({ title, fetchUrl }) => {
+const Row = ({ title, fetchUrl, value }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
