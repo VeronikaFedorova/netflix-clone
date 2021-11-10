@@ -1,0 +1,31 @@
+@import url("../../components/constants.css");
+
+.moviePage {
+    height: 100vh;
+    background-color: var(--dark);
+}
+
+h1, 
+h2,
+.movie__summary{
+    color: var(--light);
+}
+
+.movie__container {
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    padding: 7% 10% 0 10%;
+}
+
+.movie__img > img { 
+    height: 450px;
+    width: 300px;
+    margin-right: 10rem;
+    box-shadow: 15px 25px 30px rgba(0,0,0,1); 
+}
+
+.movie__summary {
+    padding: 2rem 0;
+    line-height: 1.5rem;
+}

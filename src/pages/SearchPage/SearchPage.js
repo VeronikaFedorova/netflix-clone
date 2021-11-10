@@ -65,7 +65,7 @@ const SearchPage = () => {
       <div className="search__posters">
         {filteredMovies.map((movie) => (
           <img
-            onClick={() => history.push("/movie")}
+            onClick={() => history.push("/movie/" + movie.id)}
             className="search__poster"
             key={movie.id}
             src={

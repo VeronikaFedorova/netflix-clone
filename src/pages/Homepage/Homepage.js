@@ -15,9 +15,6 @@ const Homepage = () => {
 
       <Banner />
       <Row title="TRENDING NOW" fetchUrl={requests.fetchTrending} />
-      <Row title="COMEDY" fetchUrl={requests.fetchComedy} />
-      <Row title="DRAMA" fetchUrl={requests.fetchDrama} />
-      <Row title="HORROR" fetchUrl={requests.fetchHorror} />
     </div>
   );
 };
