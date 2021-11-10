@@ -8,7 +8,6 @@ const MoviePage = () => {
   const url = window.location.href;
   const ID = url.substr(url.lastIndexOf("/") + 1);
   const [movies, setMovies] = useState([]);
-  let allMovies = [];
 
   useEffect(() => {
     async function fetchData() {
@@ -19,17 +18,19 @@ const MoviePage = () => {
     fetchData();
   }, []);
 
-  console.log(allMovies);
 
   
 
   const exactMovie = [movies.filter((movie) => movie?.id.toString() === ID)];
     
-  console.log(exactMovie);
 
   let description = exactMovie[0][0]?.summary;
   if (description) {
     description = description.replace(/<\/?[a-zA-Z]+>/gi, "");
+  }
+
+  function truncate(description, n) {
+    return description?.length > n ? description.substr(0, n - 1) + "..." : description;
   }
 
   return (
@@ -44,7 +45,7 @@ const MoviePage = () => {
           <h2 className="movie__genres">
             {exactMovie[0][0]?.genres.join(" ")}
           </h2>
-          <div className="movie__summary">{description}</div>
+          <div className="movie__summary">{truncate(description, 500)}</div>
           <button className="banner__button">My list</button>
         </div>
       </div>

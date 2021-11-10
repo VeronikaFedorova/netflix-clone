@@ -2,25 +2,23 @@ import React, { useState, useEffect } from "react";
 import "./Banner.css";
 import axios from "../../config/axios/axios";
 import requests from "../../config/requests/requests";
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser, liked } from "../../features/userSlice";
+import { useDispatch } from "react-redux";
+import {  liked } from "../../features/userSlice";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
-  const [listed, setListed] = useState([]);
 
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const likedMovie = (listed) => {
-      if(listed) {
+    const likedMovie = (liked) => {
+      if(liked) {
         dispatch(
           liked({
-            movie: movie,
+            userMovie: movie,
           })
         );
-        console.log("OK");
+        console.log(movie.id);
       }
     }
     return likedMovie;
@@ -58,8 +56,12 @@ const Banner = () => {
       <div className="banner__contents">
         <h1 className="banner__title">{movie?.name}</h1>
         <div className="banner__buttons">
-          <button className="banner__button">Play</button>
-          <button onClick={() => setListed(movie)} className="banner__button">My list</button>
+          <button className="banner__button">
+            <a href={movie?.url}>
+              Play
+            </a>
+          </button>
+          <button onClick={() => liked(movie?.id)} className="banner__button">My list</button>
         </div>
         <h1 className="banner__description">{truncate(description, 200)}</h1>
       </div>

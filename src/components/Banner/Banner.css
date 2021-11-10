@@ -60,3 +60,8 @@
 .banner__description {
     color: var(--light);
 }
+
+.banner__button > a {
+  text-decoration: none;
+  color: var(--light);
+}
