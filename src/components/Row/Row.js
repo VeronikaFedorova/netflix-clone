@@ -20,7 +20,6 @@ const Row = ({ title, fetchUrl, value }) => {
 
   return (
     <div className="row">
-      <h2>{title}</h2>
       <div className="row__posters">
         {movies.map((movie) => (
           <div className="card__container" onClick={() => history.push(`/movie/${movie?.id ? movie?.id : movie?.show?.id}`)}>

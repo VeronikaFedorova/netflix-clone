@@ -31,14 +31,25 @@
     cursor: pointer;
 }
 
+.card__info {
+    padding-top: 10px;
+}
+
+
 .card__name,
 .card__date,
 .card__site {
-    padding-left: 10px;
     color: var(--light);
     text-decoration: none;
 }
 
 .card__site:hover {
     color: var(--red)
+}
+
+.card__container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2rem;
 }

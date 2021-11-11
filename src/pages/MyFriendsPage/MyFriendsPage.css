@@ -1,26 +1,25 @@
 @import url(../../components/constants.css);
 
-.listPage {
+.myFriendsPage {
     height: 100vh;
     background-color: var(--dark);
 }
 
-.listPage > h2 {
-    color: var(--light);
+.myFriendsPage__header {
     text-align: center;
-    padding-top: 5%;
+    padding-top: 6%;
 }
 
-.liked {
-    padding-top: 2%;
-    background-color: var(--dark);
+.followed {
+  padding-top: 2%;
+  background-color: var(--dark);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(auto, 1vw);
   grid-gap: 15px;
 }
 
-.list__poster {
+.followed__poster {
     cursor: pointer;
     max-height: 250px;
     object-fit: contain;

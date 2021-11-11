@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./MoviePage.css";
 import axios from "../../config/axios/axios";
 import Nav from "../../components/Nav/Nav";
+import { useDispatch } from "react-redux";
 import requests from "../../config/requests/requests";
+import { liked } from "../../features/userSlice";
 
 const MoviePage = () => {
   const url = window.location.href;
   const ID = url.substr(url.lastIndexOf("/") + 1);
   const [movies, setMovies] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -17,9 +20,6 @@ const MoviePage = () => {
     }
     fetchData();
   }, []);
-
-
-  
 
   const exactMovie = [movies.filter((movie) => movie?.id.toString() === ID)];
     
@@ -46,7 +46,20 @@ const MoviePage = () => {
             {exactMovie[0][0]?.genres.join(" ")}
           </h2>
           <div className="movie__summary">{truncate(description, 500)}</div>
-          <button className="banner__button">My list</button>
+          <button className="movie__button">
+            <a href={exactMovie[0][0]?.url}>
+              Play
+            </a>
+          </button>
+          <button
+            onClick={() => {
+              dispatch(
+                liked({
+                  movie: exactMovie[0][0]
+                })
+              )
+            }} 
+            className="movie__button">My list</button>
         </div>
       </div>
     </div>

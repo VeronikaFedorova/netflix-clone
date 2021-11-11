@@ -1,13 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+// import { selectUser } from "../../features/userSlice";
 import { auth } from "../../config/firebase/firebase";
 import { useHistory } from "react-router-dom";
 import Nav from "../../components/Nav/Nav";
 import "./ProfilePage.css";
 
 const ProfilePage = () => {
-  const user = useSelector(selectUser);
+  const user = useSelector((state) => state.user.user);
   const history = useHistory();
 
   return (
@@ -29,9 +29,9 @@ const ProfilePage = () => {
                 My list
               </button>
               <button 
-                onClick={() => history.push("/friends")}
+                onClick={() => history.push("/people")}
                 className="profilePage__friends profilePage__button">
-                Friends
+                People
               </button>
               <button 
                 onClick={() => auth.signOut()}

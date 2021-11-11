@@ -14,7 +14,7 @@ const Homepage = () => {
       <HomeNav />
 
       <Banner />
-      <Row title="TRENDING NOW" fetchUrl={requests.fetchTrending} />
+      <Row fetchUrl={requests.fetchTrending} />
     </div>
   );
 };

@@ -7,22 +7,7 @@ import {  liked } from "../../features/userSlice";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
-
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const likedMovie = (liked) => {
-      if(liked) {
-        dispatch(
-          liked({
-            userMovie: movie,
-          })
-        );
-        console.log(movie.id);
-      }
-    }
-    return likedMovie;
-  }, [dispatch, movie]);
 
   useEffect(() => {
     async function fetchData() {
@@ -61,7 +46,15 @@ const Banner = () => {
               Play
             </a>
           </button>
-          <button onClick={() => liked(movie?.id)} className="banner__button">My list</button>
+          <button 
+            onClick={() => {
+              dispatch(
+                liked({
+                  movie: movie,
+                })
+              )
+            }}
+            className="banner__button">My list</button>
         </div>
         <h1 className="banner__description">{truncate(description, 200)}</h1>
       </div>

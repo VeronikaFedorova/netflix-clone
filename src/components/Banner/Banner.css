@@ -58,10 +58,11 @@
 .banner__button,
 .banner__description,
 .banner__description {
-    color: var(--light);
+  color: var(--light);
 }
 
 .banner__button > a {
   text-decoration: none;
   color: var(--light);
 }
+

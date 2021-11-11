@@ -13,13 +13,27 @@ export const userSlice = createSlice({
       state.user = null;
     },
     liked: (state, action) => {
-      state.user += action.payload;
+      if(!state.user.movie){
+        state.user.movie = [];
+        state.user.movie.push(action.payload);
+      } else {
+        state.user.movie.push(action.payload);
+      }
+    },
+    followed: (state, action) => {
+      if(!state.user.person){
+        state.user.person = [];
+        state.user.person.push(action.payload);
+      } else {
+        state.user.person.push(action.payload);
+      }
+    },
+    remove: (state, action) => {
+      state.user.person.pop(action.payload);
     },
   },
 });
 
-export const { login, logout, liked } = userSlice.actions;
-
-export const selectUser = (state) => state.user.user;
+export const { login, logout, liked, followed, remove } = userSlice.actions;
 
 export default userSlice.reducer;

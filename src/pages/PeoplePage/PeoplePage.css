@@ -1,0 +1,52 @@
+@import url(../../components/constants.css);
+
+.peoplePage {
+    height: 100vh;
+    background-color: var(--dark);
+}
+
+.people__button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 0.2vw;
+    padding: 0.5rem 2rem;
+    margin-left: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);  
+    color: var(--light);
+    margin-top: 6%;
+}
+  
+.people__button:hover {
+  color: var(--black);
+  background-color: var(--light);
+  transition: all 0.3s;
+}
+
+.people__posters {
+    background-color: var(--dark);
+    padding-top: 3%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto, 1vw);
+    grid-gap: 25px;
+}
+  
+.people__poster {
+    cursor: pointer;
+    max-height: 250px;
+    object-fit: contain;
+    margin-right: 10px;
+    width: 100%;
+    transition: transform 450ms;
+}
+  
+.people__poster:hover {
+  transform: scale(1.05);
+}
+
+.people__info > h3 {
+    color: var(--light);
+    text-align: center;
+}
