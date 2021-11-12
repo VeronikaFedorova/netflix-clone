@@ -4,13 +4,15 @@ import axios from "../../config/axios/axios";
 import Nav from "../../components/Nav/Nav";
 import { useDispatch } from "react-redux";
 import requests from "../../config/requests/requests";
-import { liked } from "../../features/userSlice";
+import { liked, removeMovie } from "../../features/userSlice";
 
 const MoviePage = () => {
   const url = window.location.href;
   const ID = url.substr(url.lastIndexOf("/") + 1);
   const [movies, setMovies] = useState([]);
   const dispatch = useDispatch();
+  const add = document.querySelector(".add");
+  const move = document.querySelector(".move");
 
   useEffect(() => {
     async function fetchData() {
@@ -33,6 +35,22 @@ const MoviePage = () => {
     return description?.length > n ? description.substr(0, n - 1) + "..." : description;
   }
 
+  function handleAdd(event){
+    event.preventDefault();
+    if(add){
+        add.setAttribute("hidden", "hidden");
+        move.removeAttribute("hidden", "hidden");
+    } 
+  }
+
+  function handleRemove(event){
+    event.preventDefault();
+    if(move){
+        move.setAttribute("hidden", "hidden");
+        add.removeAttribute("hidden", "hidden")
+    }
+  }
+
   return (
     <div className="moviePage">
       <Nav />
@@ -52,14 +70,29 @@ const MoviePage = () => {
             </a>
           </button>
           <button
-            onClick={() => {
+            onMouseDown={() => {
               dispatch(
                 liked({
                   movie: exactMovie[0][0]
                 })
               )
-            }} 
-            className="movie__button">My list</button>
+            }}
+            onClick={handleAdd} 
+            className="movie__button add">My list</button>
+            <button
+              hidden
+              onMouseDown={() => {
+                dispatch(
+                  removeMovie({
+                    moie: exactMovie[0][0],
+                  })
+                );
+              }}
+              onClick={handleRemove}
+              className="movie__button move"
+            >
+              Remove
+            </button>
         </div>
       </div>
     </div>

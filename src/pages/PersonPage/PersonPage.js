@@ -25,19 +25,19 @@ const PersonPage = () => {
 
   const exactPerson = [people.filter((person) => person?.id.toString() === ID)];
 
-  function handleOnMousedown(event){
+  function handleAdd(event){
     event.preventDefault();
     if(add){
         add.setAttribute("hidden", "hidden");
-        move.setAttribute("style", "visibility:visible");
+        move.removeAttribute("hidden", "hidden");
     } 
   }
 
-  function handleOnMouseOut(event){
+  function handleRemove(event){
     event.preventDefault();
     if(move){
         move.setAttribute("hidden", "hidden");
-        add.setAttribute("style", "visibility:visible");
+        add.removeAttribute("hidden", "hidden")
     }
   }
   
@@ -63,27 +63,28 @@ const PersonPage = () => {
             <a href={exactPerson[0][0]?.url}>Look</a>
           </button>
             <button
-              onClick={() => {
+              onMouseDown={() => {
                 dispatch(
                   followed({
                     person: exactPerson[0][0],
                   })
                 );
               }}
-              onKeyDown={handleOnMousedown}
+              onClick={handleAdd}
               className="person__button add"
             >
               Add friend
             </button>
             <button
-              onClick={() => {
+              hidden
+              onMouseDown={() => {
                 dispatch(
                   remove({
                     person: exactPerson[0][0],
                   })
                 );
               }}
-              onKeyDown={handleOnMouseOut}
+              onClick={handleRemove}
               className="person__button move"
             >
               Remove

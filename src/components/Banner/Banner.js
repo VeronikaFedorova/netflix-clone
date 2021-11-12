@@ -3,11 +3,14 @@ import "./Banner.css";
 import axios from "../../config/axios/axios";
 import requests from "../../config/requests/requests";
 import { useDispatch } from "react-redux";
-import {  liked } from "../../features/userSlice";
+import {  liked, removeMovie } from "../../features/userSlice";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
   const dispatch = useDispatch();
+  const add = document.querySelector(".add");
+  const move = document.querySelector(".move");
+
 
   useEffect(() => {
     async function fetchData() {
@@ -29,6 +32,22 @@ const Banner = () => {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
 
+  function handleAdd(event){
+    event.preventDefault();
+    if(add){
+        add.setAttribute("hidden", "hidden");
+        move.removeAttribute("hidden", "hidden");
+    } 
+  }
+
+  function handleRemove(event){
+    event.preventDefault();
+    if(move){
+        move.setAttribute("hidden", "hidden");
+        add.removeAttribute("hidden", "hidden")
+    }
+  }
+
   return (
     <header
       className="banner"
@@ -47,14 +66,29 @@ const Banner = () => {
             </a>
           </button>
           <button 
-            onClick={() => {
+            onMouseDown={() => {
               dispatch(
                 liked({
                   movie: movie,
                 })
               )
             }}
-            className="banner__button">My list</button>
+            onClick={handleAdd}
+            className="banner__button add">My list</button>
+            <button
+              hidden
+              onMouseDown={() => {
+                dispatch(
+                  removeMovie({
+                    moie: movie,
+                  })
+                );
+              }}
+              onClick={handleRemove}
+              className="banner__button move"
+            >
+              Remove
+            </button>
         </div>
         <h1 className="banner__description">{truncate(description, 200)}</h1>
       </div>

@@ -29,11 +29,18 @@ export const userSlice = createSlice({
       }
     },
     remove: (state, action) => {
-      state.user.person.pop(action.payload);
+      if(state.user.person){
+        state.user.person.pop(action.payload);
+      }
+    },
+    removeMovie: (state, action) => {
+      if(state.user.movie){
+        state.user.movie.pop(action.payload);
+      }
     },
   },
 });
 
-export const { login, logout, liked, followed, remove } = userSlice.actions;
+export const { login, logout, liked, followed, remove, removeMovie } = userSlice.actions;
 
 export default userSlice.reducer;
