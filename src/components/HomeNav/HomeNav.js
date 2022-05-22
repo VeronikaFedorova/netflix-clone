@@ -23,13 +23,7 @@ const HomeNav = ({updateData}) => {
   return (
     <div className={`nav ${show && `nav__black`}`}>
       <div className="nav__contents">
-        <img
-          onClick={() => history.push("/")}
-          className="nav__logo"
-          src="http://vector30.com/wp-content/uploads/2018/01/%D0%BB%D0%BE%D0%B3%D0%BE-1024x576.jpg"
-          alt="logo"
-        />
-        <ul>
+        <h3>Magirz</h3>
           <li>
             <i
               onClick={() => history.push("/search")} 
