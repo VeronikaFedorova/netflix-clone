@@ -7,7 +7,11 @@ const Loginpage = () => {
   return (
     <div className="loginPage">
       <div className="loginPage__background">
-        <h3>Magirz</h3>
+        <img
+          className="loginPage__logo"
+          src="logo.png"
+          alt=""
+        />
         <button className="loginPage__btn" onClick={() => setSignIn(true)}>
           Sign in
         </button>
