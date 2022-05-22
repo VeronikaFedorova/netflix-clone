@@ -17,7 +17,7 @@ const ProfilePage = () => {
         <h1>Edit Profile</h1>
         <div className="profilePage__info">
           <img
-            src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/1/12/User_icon_2.svg"
             alt=""
           />
           <div className="profilePage__details">
