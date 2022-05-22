@@ -26,7 +26,7 @@ const HomeNav = ({updateData}) => {
         <img
           onClick={() => history.push("/")}
           className="nav__logo"
-          src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+          src="http://vector30.com/wp-content/uploads/2018/01/%D0%BB%D0%BE%D0%B3%D0%BE-1024x576.jpg"
           alt="logo"
         />
         <ul>
