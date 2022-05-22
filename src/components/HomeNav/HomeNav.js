@@ -23,12 +23,7 @@ const HomeNav = ({updateData}) => {
   return (
     <div className={`nav ${show && `nav__black`}`}>
       <div className="nav__contents">
-        <img
-          onClick={() => history.push("/")}
-          className="nav__logo"
-          src="public\logo.png"
-          alt="logo"
-        />
+        <div onClick={() => history.push("/")}>MAGIRZ</a>
         <ul>
           <li>
             <i
