@@ -23,7 +23,7 @@ const HomeNav = ({updateData}) => {
   return (
     <div className={`nav ${show && `nav__black`}`}>
       <div className="nav__contents">
-        <h3 onClick={() => history.push("/")}>Magirz</h3>
+        <button> onClick={() => history.push("/")}>Magirz</button>
         <ul>
           <li>
             <i
