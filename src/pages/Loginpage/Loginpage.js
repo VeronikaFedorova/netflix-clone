@@ -7,11 +7,7 @@ const Loginpage = () => {
   return (
     <div className="loginPage">
       <div className="loginPage__background">
-        <img
-          className="loginPage__logo"
-          src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-          alt=""
-        />
+        <h3>Magirz</h3>
         <button className="loginPage__btn" onClick={() => setSignIn(true)}>
           Sign in
         </button>
