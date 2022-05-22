@@ -26,7 +26,7 @@ const HomeNav = ({updateData}) => {
         <img
           onClick={() => history.push("/")}
           className="nav__logo"
-          src="../../public/logo.png"
+          src="public\logo.png"
           alt="logo"
         />
         <ul>
