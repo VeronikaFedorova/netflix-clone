@@ -26,7 +26,7 @@ const HomeNav = ({updateData}) => {
         <img
           onClick={() => history.push("/")}
           className="nav__logo"
-          src="https://dribbble.com/shots/2800543-Red-Rose-Flower-Logo-Template/attachments/9490741?mode=media"
+          src="../public/logo.png"
           alt="logo"
         />
         <ul>
